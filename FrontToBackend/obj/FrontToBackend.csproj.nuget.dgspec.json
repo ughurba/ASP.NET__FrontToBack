@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Clean__Laptop\\Desktop\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj": {}
+    "C:\\Users\\Clean__Laptop\\Desktop\\myProjectAps.net\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Clean__Laptop\\Desktop\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj": {
+    "C:\\Users\\Clean__Laptop\\Desktop\\myProjectAps.net\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Clean__Laptop\\Desktop\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj",
+        "projectUniqueName": "C:\\Users\\Clean__Laptop\\Desktop\\myProjectAps.net\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj",
         "projectName": "FrontToBackend",
-        "projectPath": "C:\\Users\\Clean__Laptop\\Desktop\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj",
+        "projectPath": "C:\\Users\\Clean__Laptop\\Desktop\\myProjectAps.net\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj",
         "packagesPath": "C:\\Users\\Clean__Laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Clean__Laptop\\Desktop\\FrontToBackend\\FrontToBackend\\obj\\",
+        "outputPath": "C:\\Users\\Clean__Laptop\\Desktop\\myProjectAps.net\\FrontToBackend\\FrontToBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
     // HEADER
 
     $(document).on('click', '#search', function () {
@@ -112,6 +112,45 @@ $(document).ready(function () {
         })
     })
 
+    // search
+    $(document).on("keyup", "#input-search", function () {
+        let inputValue = $(this).val();
+        $("#searchList li").slice(1).remove();
+        $.ajax({
+            url: "home/SearchProduct?search=" + inputValue,
+            method: "get",
+            success: function (res) {
+                $("#searchList").append(res);
+            }
+        })
+    })
+
+    //load more
+   
+
+
+    let skip = 2;
+    $(document).on('click', '#button', function () {
+        let productCount = $("#productCount").val()
+        let productList = $('#productList');
+        $.ajax({
+            url: "/ProductContoller/LoadMore?skip="+skip,
+            method: "get",
+            success: function (res) {
+                productList.append(res);
+                skip += 2
+                console.log(productCount)
+                if (skip >= productCount) {
+                    
+                    $('#button').remove();
+                }
+            }
+        })
+
+    })
+
+ 
+
     // INSTAGRAM
 
     $(document).ready(function(){
@@ -147,4 +186,8 @@ $(document).ready(function () {
             }
         );
       });
+
+
 })
+
+

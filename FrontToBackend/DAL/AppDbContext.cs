@@ -12,7 +12,7 @@ namespace FrontToBackend.DAL
         public DbSet<Slider> Sliders { get; set; }
         public DbSet <SliderContent> SliderContents { get; set; }
         public DbSet <Category> categories { get; set; }
-        public DbSet <Product> products { get; set; }
+        public DbSet <Product> Products { get; set; }
         public DbSet<Expert> experts { get; set; }
         public DbSet<Blog> blogs { get; set; }
         public DbSet<sliderBottom> sliderBottom { get; set; }
