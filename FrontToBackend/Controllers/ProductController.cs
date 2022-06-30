@@ -8,11 +8,11 @@ using System.Linq;
 
 namespace FrontToBackend.Controllers
 {
-    public class ProductContoller : Controller
+    public class ProductController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProductContoller(AppDbContext context)
+        public ProductController(AppDbContext context)
         {
             _context = context;
         }

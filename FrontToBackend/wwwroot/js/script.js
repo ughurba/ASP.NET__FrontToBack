@@ -1,5 +1,6 @@
+
 $(document).ready(function () {
-    
+ 
     // HEADER
 
     $(document).on('click', '#search', function () {
@@ -186,8 +187,25 @@ $(document).ready(function () {
             }
         );
       });
-
+    
 
 })
 
 
+let closeBtn = document.querySelectorAll(".closeTd");
+
+
+closeBtn.forEach(btn => {
+
+    btn.addEventListener("click", removeHandle)
+    const id = btn.getAttribute("data-id")
+    function removeHandle() {
+        fetch("/basket/remove?id=" + id)
+            .then(res => {
+                this.parentElement.remove();
+            })
+          
+
+    }
+
+})

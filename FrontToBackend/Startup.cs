@@ -43,12 +43,13 @@ namespace FrontToBackend
             }
             app.UseStaticFiles();
             app.UseRouting();
+         
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     "default",
-                    "{controller=home}/{action=index}"
+                    "{controller=product}/{action=index}"
 
                     );
             });

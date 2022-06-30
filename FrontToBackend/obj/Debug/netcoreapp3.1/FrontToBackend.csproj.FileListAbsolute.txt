@@ -248,7 +248,10 @@ C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\ob
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\FrontToBackend.dll
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\FrontToBackend.pdb
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\FrontToBackend.genruntimeconfig.cache
-C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\home\Detail.cshtml.g.cs
-C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\ProductContoller\Index.cshtml.g.cs
-C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\ProductContoller\LoadMorePartial.cshtml.g.cs
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\searchPartial.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\home\Detail.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Product\Default.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Basket\ShowItem.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs

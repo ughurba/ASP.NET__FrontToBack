@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FrontToBackend",
+    "\\FrontToBackend\\Views",
+    "\\FrontToBackend\\Views\\home"
   ],
   "SelectedNode": "\\FrontToBackend.sln",
   "PreviewInSolutionExplorer": false

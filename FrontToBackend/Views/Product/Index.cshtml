@@ -1,4 +1,5 @@
-﻿@model List<Product>
+﻿
+@model List<Product>
 @{
     ViewData["Title"] = "Index";
 
@@ -15,15 +16,15 @@
                         <div class="product-item text-center" data-id="@item.category.Name.ToLower()">
                             <div class="img">
                                 <a asp-controller="home" asp-action="detail" asp-route-id="@item.id">
-                                    <img src="img/@item.imgUrl" class="img-fluid" alt="">
+                                    <img src="~/img/@item.imgUrl" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="title mt-3">
                                 <h6>@item.Name</h6>
                             </div>
                             <div class="price">
-                                <span class="text-black-50">Add to cart</span>
-                                <span class="text-black-50">$@item.Price</span>
+                               <a asp-controller="basket" asp-action="additem" asp-route-id="@item.id"> <span class="text-black-50">Add to cart</span> </a> 
+                                <span class="text-black-50">$@item.Price </span>
                             </div>
                         </div>
                     </div>
@@ -36,6 +37,7 @@
                 </div>
             </div>
         </section>
+
 
 
 
