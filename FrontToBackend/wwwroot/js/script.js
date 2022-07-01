@@ -198,6 +198,14 @@ const countProduct = document.querySelector(".rounded-circle");
 const minusBtns = document.querySelectorAll(".minusBtn");
 const productCounts = document.querySelectorAll(".productCount");
 const plusBtns = document.querySelectorAll(".plusBtn");
+const prices = document.querySelectorAll(".price")
+
+
+
+
+
+
+
 
 const getRequest = async () => {
 
@@ -217,11 +225,23 @@ const getRequestPlus = async (id) => {
     try {
 
         const resp = await axios.get("/basket/plus?id=" + id);
-        const producCount = resp.data
+       
+        prices.forEach(price => {
+            
+            let priceId = price.getAttribute("data-id")
+           
+            if (priceId == id) {
+               
+                price.textContent = resp.data.productPrice
+                
+            }
+        })
+
         productCounts.forEach(item => {
             let itemId = item.getAttribute("data-id")
             if (itemId == id) {
-                item.textContent = producCount
+                item.textContent = resp.data.productCount
+                
             }
         })
 
@@ -243,13 +263,23 @@ plusBtns.forEach(btn => {
 const getRequestMinus = async (id) => {
     try {
         const resp = await axios.get("/basket/minus?id=" + id);
-        const producCount = resp.data
+        prices.forEach(price => {
+            console.log(resp)
+            let priceId = price.getAttribute("data-id")
+
+            if (priceId == id) {
+
+                price.textContent = resp.data.productPrice
+
+            }
+        })
+  
         productCounts.forEach(item => {
             let itemId = item.getAttribute("data-id")
 
             if (itemId == id) {
                
-                item.textContent = producCount
+                item.textContent = resp.data.productCount
             }
         })
 

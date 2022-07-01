@@ -18,7 +18,7 @@ namespace FrontToBackend.Controllers
         {
             _context = context;
         }
-
+       
         public IActionResult Index()
         {
             return View();
@@ -50,7 +50,10 @@ namespace FrontToBackend.Controllers
                 {
                     id = dbProduct.id,
 
-                    ProductCount = 1
+                    ProductCount = 1,
+                    Price = dbProduct.Price,
+                    Sum = dbProduct.Price        
+                    
                 };
                 products.Add(basketVM);
             }
@@ -59,11 +62,7 @@ namespace FrontToBackend.Controllers
                 exsiProduct.ProductCount++;
             }
 
-           
-
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
-           
-           
            
             return Json(products.Count);
         }
@@ -93,27 +92,24 @@ namespace FrontToBackend.Controllers
             return View(products);
         }
 
-        public IActionResult Price(int? id)
-        {
-            List<BasketVM> products;
-            string basket = Request.Cookies["basket"];
-            products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            BasketVM product = products.Find(p => p.id == id);
-
-            product.Price += product.ProductCount * product.Price;
-            return Json(product.Price);
-        }
-
         public IActionResult Plus(int? id)
         {
+            
             List<BasketVM> products;
             string basket = Request.Cookies["basket"];
             products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
             BasketVM product = products.Find(p => p.id == id);
 
+            
             product.ProductCount = product.ProductCount + 1;
+            product.Sum = product.Price * product.ProductCount;
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
-            return Json(product.ProductCount);
+            var productPlusObj = new
+            {
+                productPrice = product.Sum,
+                productCount = product.ProductCount,    
+            };
+            return Json(productPlusObj);
         }
 
         public IActionResult Minus(int?id)
@@ -121,23 +117,33 @@ namespace FrontToBackend.Controllers
             List<BasketVM> products;
             string basket = Request.Cookies["basket"];
             products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-           BasketVM product =  products.Find(p => p.id == id);
-       
+            BasketVM product =  products.Find(p => p.id == id);
+            var productMinusObj = new Object();   
+            
            
             if(product.ProductCount <= 1)
             {
                 products.Remove(product);
                 Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
                 products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-               
+
             }
             else
             {
                 product.ProductCount = product.ProductCount - 1;
+                product.Sum  =  product.Price * product.ProductCount;
                 Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
+               
+                 productMinusObj = new
+                {
+                    productPrice = product.Sum,
+                    productCount = product.ProductCount
+                };
+
 
             }
-            return Json(product.ProductCount);
+
+            return Json(productMinusObj);
         }
         public IActionResult SizeBasket()
         {
