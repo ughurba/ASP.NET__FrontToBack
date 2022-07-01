@@ -30,8 +30,13 @@
       <th scope="row">@count</th>
       <td><img width="80" src="~/img/@item.imgUrl" /></td>
       <td>@item.Name</td>
-      <td>@item.Price</td>
-      <td>@item.ProductCount</td>
+      <td class="price">@item.Price</td>
+     
+      <td  > 
+          <span data-id="@item.id" class="minusBtn" style="cursor:pointer; padding:2px 5px; border-radius:10px; background:red ; margin-right:10px;">-</span>
+        <span data-id="@item.id" class="productCount"> @item.ProductCount </span> 
+      <span data-id="@item.id" class="plusBtn" style="cursor:pointer; padding:2px 5px; border-radius:10px; background:red ; margin-left:10px;" >+</span>
+      </td>
       <td data-id="@item.id" class="closeTd" style="cursor:pointer">X</td>
     </tr>
 

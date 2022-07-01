@@ -23,7 +23,7 @@
                                 <h6>@item.Name</h6>
                             </div>
                             <div class="price">
-                               <a asp-controller="basket" asp-action="additem" asp-route-id="@item.id"> <span class="text-black-50">Add to cart</span> </a> 
+                               <a   data-id="@item.id" class="addItem"> <span class="text-black-50">Add to cart</span> </a> 
                                 <span class="text-black-50">$@item.Price </span>
                             </div>
                         </div>

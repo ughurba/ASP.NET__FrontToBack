@@ -192,7 +192,120 @@ $(document).ready(function () {
 })
 
 
-let closeBtn = document.querySelectorAll(".closeTd");
+const closeBtn = document.querySelectorAll(".closeTd");
+const addBtns = document.querySelectorAll(".addItem");
+const countProduct = document.querySelector(".rounded-circle");
+const minusBtns = document.querySelectorAll(".minusBtn");
+const productCounts = document.querySelectorAll(".productCount");
+const plusBtns = document.querySelectorAll(".plusBtn");
+
+const getRequest = async () => {
+
+    try {
+        const resp = await axios.get("/basket/sizebasket");
+        const productLength = resp.data
+
+        countProduct.textContent = productLength;
+    }
+    catch {
+        console.log("error")
+    }
+}
+
+
+const getRequestPlus = async (id) => {
+    try {
+
+        const resp = await axios.get("/basket/plus?id=" + id);
+        const producCount = resp.data
+        productCounts.forEach(item => {
+            let itemId = item.getAttribute("data-id")
+            if (itemId == id) {
+                item.textContent = producCount
+            }
+        })
+
+    } catch {
+        console.log("error")
+    }
+}
+
+plusBtns.forEach(btn => {
+    function handlePlusCount() {
+        const plusId = btn.getAttribute("data-id")
+        getRequestPlus(plusId)
+    }
+
+
+    btn.addEventListener("click",handlePlusCount)
+})
+
+const getRequestMinus = async (id) => {
+    try {
+        const resp = await axios.get("/basket/minus?id=" + id);
+        const producCount = resp.data
+        productCounts.forEach(item => {
+            let itemId = item.getAttribute("data-id")
+
+            if (itemId == id) {
+               
+                item.textContent = producCount
+            }
+        })
+
+    }
+    catch {
+        console.log("error")
+    }
+}
+
+
+minusBtns.forEach(minus => {
+    function handleMinusCount() {
+  
+        const minusId = minus.getAttribute("data-id");
+        if (this.nextElementSibling.textContent == 1) {
+            getRequest();
+            getRequestMinus(minusId)
+            this.parentElement.parentElement.remove();
+            
+           
+        } else {
+            getRequestMinus(minusId)
+           
+        }
+                   
+    }
+
+    minus.addEventListener("click", handleMinusCount);
+})
+
+
+
+
+getRequest();
+
+const getRequestAddItem = async (id) => {
+    sizeBasket("/basket/additem?id=",id);
+};
+
+addBtns.forEach(addBtn => {
+
+
+    function handleAddItem() {
+       
+        const itemId = addBtn.getAttribute("data-id")
+
+        getRequestAddItem(itemId);
+    }
+ 
+    addBtn.addEventListener("click", handleAddItem);
+   
+
+});
+
+
+
 
 
 closeBtn.forEach(btn => {
@@ -200,12 +313,29 @@ closeBtn.forEach(btn => {
     btn.addEventListener("click", removeHandle)
     const id = btn.getAttribute("data-id")
     function removeHandle() {
-        fetch("/basket/remove?id=" + id)
-            .then(res => {
-                this.parentElement.remove();
-            })
-          
+        getRequest();
+        getReguestRemoveItem(id)
+        this.parentElement.remove();
 
     }
 
 })
+
+async function getReguestRemoveItem(id) {
+ 
+        sizeBasket("/basket/remove?id=" , id)
+
+}
+
+async function sizeBasket(url, id) {
+    try {
+        const resp = await axios.get(url + id);
+        const productLength = resp.data
+
+        countProduct.textContent = productLength;
+    }
+    catch {
+        console.log("error")
+    }
+  
+}
