@@ -18,7 +18,7 @@ namespace FrontToBackend.Controllers
         {
             _context = context;
         }
-       
+
         public IActionResult Index()
         {
             return View();
@@ -52,8 +52,8 @@ namespace FrontToBackend.Controllers
 
                     ProductCount = 1,
                     Price = dbProduct.Price,
-                    Sum = dbProduct.Price        
-                    
+                    Sum = dbProduct.Price
+
                 };
                 products.Add(basketVM);
             }
@@ -63,7 +63,7 @@ namespace FrontToBackend.Controllers
             }
 
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
-           
+
             return Json(products.Count);
         }
 
@@ -94,34 +94,34 @@ namespace FrontToBackend.Controllers
 
         public IActionResult Plus(int? id)
         {
-            
+
             List<BasketVM> products;
             string basket = Request.Cookies["basket"];
             products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
             BasketVM product = products.Find(p => p.id == id);
 
-            
+
             product.ProductCount = product.ProductCount + 1;
             product.Sum = product.Price * product.ProductCount;
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
             var productPlusObj = new
             {
                 productPrice = product.Sum,
-                productCount = product.ProductCount,    
+                productCount = product.ProductCount,
             };
             return Json(productPlusObj);
         }
 
-        public IActionResult Minus(int?id)
+        public IActionResult Minus(int? id)
         {
             List<BasketVM> products;
             string basket = Request.Cookies["basket"];
             products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            BasketVM product =  products.Find(p => p.id == id);
-            var productMinusObj = new Object();   
-            
-           
-            if(product.ProductCount <= 1)
+            BasketVM product = products.Find(p => p.id == id);
+            var productMinusObj = new Object();
+
+
+            if (product.ProductCount <= 1)
             {
                 products.Remove(product);
                 Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
@@ -131,10 +131,10 @@ namespace FrontToBackend.Controllers
             else
             {
                 product.ProductCount = product.ProductCount - 1;
-                product.Sum  =  product.Price * product.ProductCount;
+                product.Sum = product.Price * product.ProductCount;
                 Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
-               
-                 productMinusObj = new
+
+                productMinusObj = new
                 {
                     productPrice = product.Sum,
                     productCount = product.ProductCount
@@ -151,20 +151,20 @@ namespace FrontToBackend.Controllers
             string basket = Request.Cookies["basket"];
             goods = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
             return Json(goods.Count);
-            
+
 
         }
         public IActionResult Remove(int? id)
         {
-            
+
             List<BasketVM> goods;
             string basket = Request.Cookies["basket"];
-             goods = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+            goods = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
 
             goods.RemoveAll(item => item.id == id);
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(goods), new CookieOptions { MaxAge = TimeSpan.FromDays(14) });
             goods = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            return Json(goods.Count); 
+            return Json(goods.Count);
         }
     }
 }

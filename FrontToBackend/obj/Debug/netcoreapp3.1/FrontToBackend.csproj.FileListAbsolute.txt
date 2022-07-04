@@ -255,3 +255,7 @@ C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\ob
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Product\Default.cshtml.g.cs
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Basket\ShowItem.cshtml.g.cs
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewImports.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewStart.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Dashboard\Index.cshtml.g.cs

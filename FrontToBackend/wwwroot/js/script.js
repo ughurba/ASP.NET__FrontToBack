@@ -201,12 +201,6 @@ const plusBtns = document.querySelectorAll(".plusBtn");
 const prices = document.querySelectorAll(".price")
 
 
-
-
-
-
-
-
 const getRequest = async () => {
 
     try {

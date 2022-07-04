@@ -48,6 +48,10 @@ namespace FrontToBackend
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                      name: "areas",
+                      pattern: "{area:exists}/{controller=dashboard}/{action=Index}/{id?}"
+                    );
+                endpoints.MapControllerRoute(
                     "default",
                     "{controller=product}/{action=index}"
 
