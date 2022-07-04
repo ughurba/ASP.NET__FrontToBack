@@ -1,0 +1,36 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<div class="row">
+    
+  <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Basic form elements</h4>
+                  <p class="card-description">
+                    Create Category
+                  </p>
+                  <form class="forms-sample"  method="post">
+                    <div class="form-group">
+                      <label asp-for="Name">Name</label>
+                      <input asp-for="Name"  class="form-control"  placeholder="Name">
+                      <span class="text-danger" asp-validation-for="Name"></span>  
+ 
+                  </div>
+                    <div class="form-group">
+                      <label asp-for="Desc">Textarea</label>
+                      <textarea asp-for="Desc" class="form-control"  rows="4"></textarea>
+                  <span class="text-danger" asp-validation-for="Desc"></span>  
+                  </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                   <a class="btn btn-dark" asp-action="index">Go back</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+</div>
+
+
