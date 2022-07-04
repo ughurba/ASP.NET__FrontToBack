@@ -37,13 +37,13 @@ namespace FrontToBackend.Areas.AdminPanel.Controllers
             }
             return View(category);  
         }
-        public async Task<IActionResult>  Detail(int? id)
+        public async Task<IActionResult> Detail(int? id)
         {
             if (id == null) return NotFound();
             Category dbCategory = await _context.categories.FindAsync(id);
             if (dbCategory == null) return NotFound();
             return View(dbCategory);
-           
+        }
     
     }
 }

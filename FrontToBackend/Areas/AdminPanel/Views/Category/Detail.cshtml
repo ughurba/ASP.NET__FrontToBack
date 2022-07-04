@@ -1,0 +1,26 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+       <div class="col-md-6 d-flex align-items-stretch">
+              <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">@Model.Name</h4>
+                  
+                      <p>
+                      @Model.Desc
+                      </p>
+                         <a class="btn btn-dark" asp-action="index">Go back</a>
+                    </div>
+                  </div>
+                </div>
+             
+              </div>
+            </div>
+</div>
+
