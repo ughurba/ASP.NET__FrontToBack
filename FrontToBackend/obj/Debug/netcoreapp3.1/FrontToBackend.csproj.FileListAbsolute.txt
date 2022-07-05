@@ -263,3 +263,9 @@ C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\ob
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Create.cshtml.g.cs
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Detail.cshtml.g.cs
 C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Update.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Index.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Detail.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Create.cshtml.g.cs
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
+C:\Users\Clean__Laptop\Desktop\myProjectAps.net\FrontToBackend\FrontToBackend\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Update.cshtml.g.cs

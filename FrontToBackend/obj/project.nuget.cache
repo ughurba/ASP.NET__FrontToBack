@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1Zgr8LyeMZpqd0YlWczIacEf+whGTf8rAONsfmAKX60DxQ6s/aTaNnzjpqEvkcBR4tmBFMW2F+i1TD/jCPJI0Q==",
+  "dgSpecHash": "erlCja5u7xHEZ3seS/tvoieWNtd72XOarQVwbpoPwoH3EyPuBd41YTU1Ri/5EnvTBn+f2NZHBhz/6NBcqjlOMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Clean__Laptop\\Desktop\\myProjectAps.net\\FrontToBackend\\FrontToBackend\\FrontToBackend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Clean__Laptop\\.nuget\\packages\\awssdk.core\\3.7.12.5\\awssdk.core.3.7.12.5.nupkg.sha512",
+    "C:\\Users\\Clean__Laptop\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.3.53\\awssdk.dynamodbv2.3.7.3.53.nupkg.sha512",
     "C:\\Users\\Clean__Laptop\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Clean__Laptop\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Clean__Laptop\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
