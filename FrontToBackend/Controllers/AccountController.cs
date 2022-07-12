@@ -77,16 +77,22 @@ namespace FrontToBackend.Controllers
             if (result.IsLockedOut)
             {
                 ModelState.AddModelError("", "Bloklandiniz");
-                return View(loginVM);
+                return View();
             }
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "email ve ya password invalid");
-                return View(loginVM);
+                return View();
             }
 
 
             return RedirectToAction("index", "home");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("login");
         }
     }
 }
