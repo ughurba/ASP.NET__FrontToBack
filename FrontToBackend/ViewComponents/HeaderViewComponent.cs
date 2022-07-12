@@ -1,6 +1,7 @@
 ﻿using FrontToBackend.DAL;
 using FrontToBackend.Models;
 using FrontToBackend.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -14,12 +15,22 @@ namespace FrontToBackend.ViewComponents
     public class HeaderViewComponent:ViewComponent
     {
         private readonly AppDbContext _context;
-        public HeaderViewComponent(AppDbContext context)
+        private readonly UserManager<AppUser> _userManager;
+
+   
+
+        public HeaderViewComponent(AppDbContext context, UserManager<AppUser> userManager)
         {
+            _userManager = userManager;
             _context = context;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            ViewBag.User = "";
+            if (User.Identity.IsAuthenticated)
+            {   AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+                ViewBag.User = user.FullName;
+            }
             ViewBag.BasketCount = 0;
             ViewBag.TotalPrice = 0;
             double totalPrice = 0;
