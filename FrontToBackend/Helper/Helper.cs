@@ -10,4 +10,13 @@
             }
         }
     }
+
+    public enum UserRoles
+    {
+
+        Admin,
+        Member,
+        SuperAdmin
+    }
+
 }

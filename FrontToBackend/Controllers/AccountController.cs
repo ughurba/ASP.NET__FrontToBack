@@ -1,7 +1,9 @@
-﻿using FrontToBackend.Models;
+﻿using FrontToBackend.Helper;
+using FrontToBackend.Models;
 using FrontToBackend.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace FrontToBackend.Controllers
@@ -53,16 +55,17 @@ namespace FrontToBackend.Controllers
                 return View(registerVM);
             }
             await _signInManager.SignInAsync(user, true);
-            return RedirectToAction("Index", "Home");
-        }
-
-        public IActionResult Login()
-        {
-            return View();
+            await _userManager.AddToRoleAsync(user, UserRoles.Member.ToString());
+            return RedirectToAction("login", "account"); 
+        } 
+         
+        public IActionResult Login() 
+        { 
+            return View(); 
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginVM loginVM)
+        public async Task<IActionResult> Login(LoginVM loginVM,string ReturnUrl )
         {
             if (!ModelState.IsValid) return View();
 
@@ -84,7 +87,20 @@ namespace FrontToBackend.Controllers
                 ModelState.AddModelError("", "email ve ya password invalid");
                 return View();
             }
+            await _signInManager.SignInAsync(appUser, true);
+            var role = await _userManager.GetRolesAsync(appUser);
 
+            foreach (var item in role)
+            {
+                if(item == "Admin")
+                {
+                    return RedirectToAction("Index", "dashboard",new { area = "AdminPanel"});
+                }
+            }
+            if(ReturnUrl != null)
+            {
+                return Redirect(ReturnUrl);
+            }
 
             return RedirectToAction("index", "home");
         }
@@ -93,6 +109,17 @@ namespace FrontToBackend.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("login");
+        }
+
+        public async Task CreateRole()
+        {
+            foreach (var item in Enum.GetValues(typeof(UserRoles)))
+            {
+                if(!await _roleManager.RoleExistsAsync(item.ToString()))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole { Name = item.ToString() });
+                }
+            }
         }
     }
 }
