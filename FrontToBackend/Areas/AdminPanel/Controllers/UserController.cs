@@ -55,11 +55,12 @@ namespace FrontToBackend.Areas.AdminPanel.Controllers
             AppUser user = await _userManager.FindByIdAsync(id);
             var userRoles = await _userManager.GetRolesAsync(user);
 
-            var addRoles = roles.Except(userRoles);
-            var removeRoles = userRoles.Except(roles);
+            //var addRoles = roles.Except(userRoles);
+            //var removeRoles = userRoles.Except(roles);
 
-            await _userManager.AddToRolesAsync(user, addRoles);
-            await _userManager.RemoveFromRolesAsync(user, removeRoles);
+           
+            await _userManager.RemoveFromRolesAsync(user, userRoles);
+            await _userManager.AddToRolesAsync(user, roles);
             return RedirectToAction("index");
         }
     }
