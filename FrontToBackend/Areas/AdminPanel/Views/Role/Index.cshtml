@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<IdentityRole>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+       <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Role Table</h4>
+              <a asp-action="create" class="btn btn-success">create</a>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          
+                          <th>Name</th>
+                  
+                          <th>Settings</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                   @foreach (IdentityRole item in Model)
+                            {
+                        
+                        <tr>
+                          
+                          <td>@item.Name</td>
+                          
+                          <td>
+                              <a class="btn btn-warning" asp-action="update" asp-route-id="@item.Id"><i style="color:green; font-size:17px;" class="mdi mdi-border-color"></i></a>
+                              <a class="btn btn-primary" asp-action="detail" asp-route-id="@item.Id"><i  style="color:blueviolet; font-size:17px;" class="mdi mdi-account-card-details"></i></a>
+                              <a class="btn btn-dark" asp-action="delete" asp-route-id="@item.Id"><i  style="color:red; font-size:17px;" class="mdi mdi-delete"></i></a>
+                          </td>
+                        </tr>
+                            }
+                     
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+

@@ -72,7 +72,7 @@ namespace FrontToBackend
                     );
                 endpoints.MapControllerRoute(
                     "default",
-                    "{controller=product}/{action=index}"
+                    "{controller=home}/{action=index}"
 
                     );
             });

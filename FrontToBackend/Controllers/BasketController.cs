@@ -149,9 +149,14 @@ namespace FrontToBackend.Controllers
         {
             List<BasketVM> goods;
             string basket = Request.Cookies["basket"];
-            goods = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            return Json(goods.Count);
+            if(basket != null)
+            {
+                goods = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+                return Json(goods.Count);
+            }
 
+
+            return Json("");
 
         }
         public IActionResult Remove(int? id)

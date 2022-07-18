@@ -1,0 +1,57 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="row">
+       <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">User Table</h4>
+                <div>
+                     <form asp-action="index" >
+
+                          <div class="form-group">
+                            <input name="search" type="text" class="form-control"   placeholder="Enter email">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                          </div>
+                        
+                     </form>
+                </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Username</th>
+                          <th>Fullname</th>
+                          <th>Settings</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                   @foreach (var item in Model)
+                            {
+                           count++;
+                        <tr>
+                          <td>@count</td>
+                          <td>@item.UserName</td>
+                          <td>@item.FullName</td>
+                          <td>
+                              <a class="btn btn-warning" asp-action="update" asp-route-id="@item.Id"><i style="color:green; font-size:17px;" class="mdi mdi-border-color"></i></a>
+                              <a class="btn btn-primary" asp-action="detail" asp-route-id="@item.Id"><i  style="color:blueviolet; font-size:17px;" class="mdi mdi-account-card-details"></i></a>
+                              <a class="btn btn-dark" asp-action="delete" asp-route-id="@item.Id"><i  style="color:red; font-size:17px;" class="mdi mdi-delete"></i></a>
+                          </td>
+                        </tr>
+                            }
+                     
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+
+
