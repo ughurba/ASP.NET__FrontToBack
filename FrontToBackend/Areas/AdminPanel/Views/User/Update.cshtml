@@ -13,7 +13,7 @@
                               @foreach (var item in Model.roles)
                                 {
                                    
-                                        <input name="roles" value="@item.ToString()" class="form-check-input" type="checkbox" @(Model.userRoles.Contains(item.ToString()))?"checked=\checked/>@item
+                                        <input name="roles" value="@item.ToString()" class="form-check-input" type="checkbox" @(Model.userRoles.Contains(item.ToString())?"checked=\"checked\"":"")/>@item
                                    
                                  
                
